@@ -7,8 +7,8 @@ public class Duke {
     public Duke(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);
-            tasks = new TaskList(storage);
-            ui.setTaskList(tasks);
+        tasks = new TaskList(storage);
+        ui.setTaskList(tasks);
     }
 
     public void run() {

@@ -6,7 +6,6 @@ public class Event extends AbstractTask {
     String time;
     String[] parseDateTime;
 
-
     public Event(String taskName, String dateTime){
         super(taskName);
         parseDateTime = dateTime.split(" ",  3);
@@ -22,7 +21,8 @@ public class Event extends AbstractTask {
 
     @Override
     public String toString(){
-        return (this.time != null) ? "[E]" + taskStateString() + " " + this.taskName + parseDateTime[0] + " " + formattedDate() + " " + this.time
+        return (this.time != null) ? "[E]" + taskStateString() + " " + this.taskName + parseDateTime[0] + " "
+                + formattedDate() + " " + this.time
                 : "[E]" + taskStateString() + " " + this.taskName + parseDateTime[0] + " " + formattedDate();
     }
 

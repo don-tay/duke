@@ -24,10 +24,12 @@ public class Ui {
 
     public void awaitUserInput(){
         String in = sc.nextLine();
+
         while (!in.equals("bye")){
             p.getInput(in);
             in = sc.nextLine();
         }
+
         System.out.println("     Bye. Hope to see you again soon!");
     }
 }

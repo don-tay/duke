@@ -27,6 +27,7 @@ public class Storage {
     @SuppressWarnings("unchecked")
     public List<Task> loadTask() {
         String parentDirectory = new File(path).getParent();
+
         if (!Files.exists(Paths.get(path))) { // if file or directory does not exist
             try {
                 new File(parentDirectory).mkdirs(); // create new directory
