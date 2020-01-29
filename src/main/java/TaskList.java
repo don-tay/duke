@@ -68,6 +68,8 @@ public class TaskList {
             }
         } catch (IndexOutOfBoundsException e){
             System.err.println("     ☹ OOPS!!! Please input a valid keyword to find.");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
