@@ -11,7 +11,11 @@ public abstract class AbstractTask implements Task {
 
     protected String taskStateString(){
         return (this.isDone) ? "[✓]" : "[✗]";
+    }
 
+    @Override
+    public String getTaskName() {
+        return this.taskName;
     }
 
     public void markDone(){

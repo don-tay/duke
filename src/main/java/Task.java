@@ -7,4 +7,6 @@ public interface Task extends Serializable {
 
     public void markDone();
 
+    public String getTaskName();
+
 }

@@ -50,6 +50,30 @@ public class TaskList {
             storage.saveTask(taskList);
         }
     }
+
+    /**
+     * Lists all tasks with matching keyword to taskName
+     * @param taskName String containing "find" + keyword to be searched
+     */
+    public void findTask(String taskName){
+        try{
+            System.out.println("     Here are the matching tasks in your list:");
+            String keyWord = taskName.split(" ", 2)[1];
+            int i = 1;
+            for(Task t : taskList){
+                if (t.getTaskName().contains(keyWord)){
+                    System.out.println("     " + i + "." + t);
+                    i++;
+                }
+            }
+        } catch (IndexOutOfBoundsException e){
+            System.err.println("     ☹ OOPS!!! Please input a valid keyword to find.");
+        }
+    }
+
+    /**
+     * Prints the list of tasks out.
+     */
     public void printList(){
         System.out.println("     Here are the tasks in your list:");
         int i = 1;

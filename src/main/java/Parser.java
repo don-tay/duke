@@ -15,6 +15,8 @@ public class Parser {
                 taskList.printDone(in);
             } else if (taskType.equals("delete")){
                 taskList.deleteTask(in);
+            } else if (taskType.equals("find")){
+                taskList.findTask(in);
             } else if (Task.isValidTask(taskType)){
                 taskList.addTask(in);
             } else if (in.isEmpty() || in == null){
