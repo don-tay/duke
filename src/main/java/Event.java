@@ -1,12 +1,19 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Extends from AbstractTask with additional attribute of date and time (optional).
+ */
 public class Event extends AbstractTask {
     LocalDate date;
     String time;
     String[] parseDateTime;
 
-
+    /**
+     * Constructor
+     * @param taskName Name of task to be done
+     * @param dateTime Date and time of task as a String
+     */
     public Event(String taskName, String dateTime){
         super(taskName);
         parseDateTime = dateTime.split(" ",  3);
@@ -16,6 +23,10 @@ public class Event extends AbstractTask {
         }
     }
 
+    /**
+     * Formats date from yyyy-mm-dd to MMM d yyyy
+     * @return
+     */
     private String formattedDate(){
         return this.date.format(DateTimeFormatter.ofPattern("MMM d yyyy"));
     }

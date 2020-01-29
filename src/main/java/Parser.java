@@ -1,11 +1,24 @@
 public class Parser {
     TaskList taskList;
 
+    /**
+     * Constructor
+     */
     public Parser(){}
 
+    /**
+     * Sets corresponding taskList that Parser will parse for.
+     * Each parser parses for one taskList.
+     * @param taskList taskList to be parsing commands for
+     */
     public void setTaskList(TaskList taskList){
         this.taskList = taskList;
     }
+
+    /**
+     * Takes input command from user and executes corresponding action on taskList
+     * @param in Input command
+     */
     public void getInput(String in){
         if (in.equals("list")){
             taskList.printList();

@@ -4,14 +4,25 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class to store the taskList.
+ */
 public class Storage {
     String path;
     static final String HOME = System.getProperty("user.dir");
 
+    /**
+     * Constructor.
+     * @param filepath Filepath of Storage
+     */
     public Storage(String filepath){
         path = HOME + "/" + filepath;
     }
 
+    /**
+     * Saves taskList to storage.
+     * @param taskList taskList to be saved.
+     */
     public void saveTask(List<Task> taskList){
         try {
             FileOutputStream fileOut = new FileOutputStream(path);
@@ -24,6 +35,11 @@ public class Storage {
         }
     }
 
+    /**
+     * Get taskList from storage. Usually executed at initial startup of Duke.
+     * If not taskList found in storage, it will return an empty taskList initialized and stored in Storage filepath.
+     * @return taskList.
+     */
     @SuppressWarnings("unchecked")
     public List<Task> loadTask() {
         String parentDirectory = new File(path).getParent();

@@ -1,14 +1,26 @@
 import java.util.List;
 
+/**
+ * Class containing the list of tasks when the "list" command is used
+ */
 public class TaskList {
     List<Task> taskList;
     Storage storage;
 
+    /**
+     * Constructor
+     * @param storage the Storage disk where this taskList is stored in
+     */
     public TaskList(Storage storage) {
         this.storage = storage;
         this.taskList = storage.loadTask();
     }
 
+    /**
+     * Add task to taskList. And prints add response to UI.
+     * @param taskName Command followed by the name of task to be done.
+     *                 Time is optional, demarcated by an additional spacing.
+     */
     public void addTask(String taskName){
         try {
             String taskType = taskName.split(" ", 2)[0];
@@ -34,6 +46,11 @@ public class TaskList {
         }
     }
 
+    /**
+     * Delete task from taskList. And prints delete response to UI.
+     * @param taskName Command followed by the name of task to be done.
+     *                 Time is optional, demarcated by an additional spacing.
+     */
     public void deleteTask(String taskName){
         try {
             String taskNum = taskName.split(" ", 2)[1];
@@ -50,6 +67,10 @@ public class TaskList {
             storage.saveTask(taskList);
         }
     }
+
+    /**
+     * Prints the list of tasks out.
+     */
     public void printList(){
         System.out.println("     Here are the tasks in your list:");
         int i = 1;
@@ -59,6 +80,10 @@ public class TaskList {
         }
     }
 
+    /**
+     * Marks a particular task number, ordered by its position in taskList, as done, and prints done response.
+     * @param in Task number that is to be marked done
+     */
     public void printDone(String in){
         try{
             int num = Integer.parseInt(in.substring(5));
